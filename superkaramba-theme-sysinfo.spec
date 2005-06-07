@@ -11,11 +11,13 @@ Group:		Themes
 Source0:	http://www.kde-look.org/content/files/22618-%{theme}.tar.gz
 # Source0-md5:	caaf97a549b319790d8e3fcb1ba2f5e5
 URL:		http://www.kde-look.org/content/show.php?content=22618
+BuildRequires:	sed >= 4.0
 Requires:	superkaramba >= 0.36
 Requires:	perl-libnet
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-%define 	_sysinfodir 	/themes/superkaramba/sysinfo
+
+%define 	_sysinfodir 	%{_datadir}/themes/superkaramba/sysinfo
 
 %description
 kstatus theme for superkaramba. Features :
@@ -47,26 +49,25 @@ Motyw Stylus Theme dla superkaramby. Wy¶wietlane informacje :
 %setup -q -n %{theme}
 
 # theme modified to use proper path (mail_pop3.pl) and prepare for email clients
-%{__sed} -i 's/\/path\/to/\/usr\/share\/themes\/superkaramba\/sysinfo\/scripts/g' sysinfo.theme
+%{__sed} -i 's,/path/to,%{_sysinfodir}/scripts,g' sysinfo.theme
 cp sysinfo.theme sysinfo_kmail.theme
 %{__sed} -i 's/kmail/mozilla-thunderbird/g' sysinfo.theme
 mv sysinfo.theme sysinfo_thunderbird.theme
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}%{_sysinfodir} \
-	$RPM_BUILD_ROOT%{_datadir}%{_sysinfodir}/{images,scripts}
+install -d $RPM_BUILD_ROOT%{_sysinfodir}{,/images,/scripts}
 
-install *.theme $RPM_BUILD_ROOT%{_datadir}%{_sysinfodir}
-install images/*.png $RPM_BUILD_ROOT%{_datadir}%{_sysinfodir}/images
-install scripts/*.pl $RPM_BUILD_ROOT%{_datadir}%{_sysinfodir}/scripts
-
-
+install *.theme $RPM_BUILD_ROOT%{_sysinfodir}
+install images/*.png $RPM_BUILD_ROOT%{_sysinfodir}/images
+install scripts/*.pl $RPM_BUILD_ROOT%{_sysinfodir}/scripts
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_datadir}%{_sysinfodir}
-%attr(755,root,root) %{_datadir}%{_sysinfodir}/scripts/*.pl
+%dir %{_sysinfodir}
+%{_sysinfodir}/*.theme
+%{_sysinfodir}/images
+%attr(755,root,root) %{_sysinfodir}/scripts
