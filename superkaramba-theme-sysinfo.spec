@@ -12,8 +12,8 @@ Source0:	http://www.kde-look.org/content/files/22618-%{theme}.tar.gz
 # Source0-md5:	caaf97a549b319790d8e3fcb1ba2f5e5
 URL:		http://www.kde-look.org/content/show.php?content=22618
 BuildRequires:	sed >= 4.0
-Requires:	superkaramba >= 0.36
 Requires:	perl-libnet
+Requires:	superkaramba >= 0.36
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,7 +39,7 @@ Motyw Stylus Theme dla superkaramby. Wy¶wietlane informacje :
  - Wersja KDE
  - Obci±¿enie procesora
  - Czêstotliwo¶æ / cache procesora
- - Obci±¿enie pamiêci RAM i pliku wymiany
+ - Wykorzystanie pamiêci RAM i pliku wymiany
  - Monitor dysków
  - Monitor sieci
  - Uptime, czas, data
