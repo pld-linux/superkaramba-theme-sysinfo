@@ -2,7 +2,7 @@
 %define		theme	sysinfo
 
 Summary:	superkaramba - Stylus Sysinfo theme
-Summary(pl):	superkaramba - motyw Stylus Sysinfo
+Summary(pl.UTF-8):   superkaramba - motyw Stylus Sysinfo
 Name:		superkaramba-theme-%{theme}
 Version:	0.1
 Release:	1
@@ -32,15 +32,15 @@ kstatus theme for superkaramba. Features :
  - IP Address Output
  - Uptime / Time / Date Output
 
-%description -l pl
-Motyw Stylus Theme dla superkaramby. Wy¶wietlane informacje :
+%description -l pl.UTF-8
+Motyw Stylus Theme dla superkaramby. WyÅ›wietlane informacje :
  - User@hostname
- - Wersja j±dra
+ - Wersja jÄ…dra
  - Wersja KDE
- - Obci±¿enie procesora
- - Czêstotliwo¶æ / cache procesora
- - Wykorzystanie pamiêci RAM i pliku wymiany
- - Monitor dysków
+ - ObciÄ…Å¼enie procesora
+ - CzÄ™stotliwoÅ›Ä‡ / cache procesora
+ - Wykorzystanie pamiÄ™ci RAM i pliku wymiany
+ - Monitor dyskÃ³w
  - Monitor sieci
  - Uptime, czas, data
  - Powiadamianie o nowej poczcie
