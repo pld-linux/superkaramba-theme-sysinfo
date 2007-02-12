@@ -2,7 +2,7 @@
 %define		theme	sysinfo
 
 Summary:	superkaramba - Stylus Sysinfo theme
-Summary(pl.UTF-8):   superkaramba - motyw Stylus Sysinfo
+Summary(pl.UTF-8):	superkaramba - motyw Stylus Sysinfo
 Name:		superkaramba-theme-%{theme}
 Version:	0.1
 Release:	1
